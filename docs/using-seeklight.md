@@ -27,7 +27,7 @@ To use JSTOR Seeklight, your institution must:
 ## How to Access Seeklight
 
 1. **Log in to JSTOR Stewardship**
-   - Navigate to your institution's JSTOR Stewardship portal
+   - **Grinnell College login**: [https://stewardship.jstor.org/#/login?redirect=/dashboard](https://stewardship.jstor.org/#/login?redirect=/dashboard)
    - Use your institutional credentials to sign in
 
 2. **Access Seeklight features**
