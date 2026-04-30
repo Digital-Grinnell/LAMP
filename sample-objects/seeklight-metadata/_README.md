@@ -11,9 +11,15 @@ Files should be named to match their corresponding digital object's Title, e.g.:
 
 ## How to Generate Seeklight Metadata
 
-1. Submit the digital object to Seeklight via the JSTOR interface or API.
-2. Download or export the metadata returned by Seeklight.
-3. Save the output here using the naming convention above.
+For detailed step-by-step instructions, see [`../../docs/using-seeklight.md`](../../docs/using-seeklight.md).
+
+**Quick overview:**
+
+1. Log in to JSTOR Stewardship (Tier 3 subscription required)
+2. Upload your digital object
+3. Click "Generate Metadata" and review the AI-generated output
+4. Edit and approve the metadata
+5. Export as JSON and save here using the naming convention above
 
 ## Using the Metadata for Comparison
 
