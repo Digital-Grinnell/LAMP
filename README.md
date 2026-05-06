@@ -42,3 +42,64 @@ This project works with the following metadata standards:
 ## Using Seeklight
 
 For detailed instructions on how to access and use JSTOR Seeklight to generate metadata for digital objects, see [`docs/using-seeklight.md`](docs/using-seeklight.md).
+
+## Sequence of Testing and Issues
+
+### 01
+On our first attempt at using Seeklight I created a new 'project' and named it "LAMP" after this repository.  Project settings include selection of a metadata schema, but recent changes in Seeklight appear to restrict generation of metadata using AI to ONLY the new "AI-compatible Dublin Core Template" as shown below.  
+
+![](2026-05-06-16-17-40.png)
+
+Consequently, the "LAMP" project was abandoned and left empty.  
+
+### 02 
+A new project named "LAMP-AI" was created and the ""AI-compatible Dublin Core Template" was selected for it.  Experience with that project generated an initial set of data in this project's `main` branch.  
+
+### 03
+A new `new_analysis` branch of this project was created and we attempted to engage Seeklight's "compound" object behavior with NO initial project creation.  An issue with compound file naming came to light as illustrated below.  
+
+![](2026-05-06-16-18-24.png) 
+
+The above image shows our attempt to restructure content filenames for two objects to reflect the "compound" nature of them.  
+
+a) The first titled "Developmental Dilemmas" consists of two PDF files representing a book in PDF form, and a digital-only set of appendicies to the book, also in PDF form.  
+
+As you can see, **Seeklight's "compound" grouping does not appear to apply to PDF file types**.  
+
+_Since this limitation cannot be overcome by simple file naming, the two PDF files were merged into a single PDF that will be submitted to Seeklight for processing._  
+
+b) Two unrelated image files, "sample-objects/objects/Spaulding H advertisement/991011591189604641.jpg" and "sample-objects/objects/Washington High School, Cedar Rapids, Iowa/991011582738904641.jpg" were errantly grouped as a single "compound" apparently because the grouping algorithm found similar numbers (all of Grinnell's Alma MMS_ID values end in "04641") and paired them together. 
+
+Clearly, **we will have to use different names for objects from Alma to trigger proper "compound" file grouping**. 
+
+_Changes to the filenames were made to keep them from errantly grouping as a "compound", and you can see the results in the image below._   
+
+c) The second compound object titled "Stewart Public Library, Grinnell, Iowa" consisted of recto and verso images.  This object appears to have been "grouped" properly as a compound object with similar, but sequentially numbered, filenames.  No further action is needed for this compound object.  
+
+### 04
+Files were renamed to avoid errant "compound" grouping and the "New LAMP" project configuration selected "AI-compatible Dublin Core Template" for its metadata schema.  Metadata generation was subsequently engaged to create 6 metadata records.  
+
+![](2026-05-06-16-29-09.png)
+
+A portion of the results and the `...` menu options for the initial records (not yet marked as "Reviewed") appear as in the image above.  
+
+### 05
+Selecting all 6 records and choosing "Download metadata" produced the XLSX file you see captured below, and there was no option to export the metadata in any other format.  
+
+![](2026-05-06-16-33-03.png) 
+ 
+Since the XLSX image is difficult to see we have attached it to the repository as `New_LAMP_628269.xlsx`.  
+
+The file has 23 fields of descriptive metadata with some fields like `VOLUME` and `ISSUE` left entirely blank.  The XLSX data doesn't appear to include any of the "confidence" data that is displayed in the metadata within the JSTOR interface.  
+
+### 06
+I again selected all 6 records and marked the metadata as having been reviewed.  The screen and `...` menu choices you see then changed to this:  
+
+![](2026-05-06-16-42-04.png)
+
+### 07
+Selecting all 6 records and choosing "Download metadata" again produced the repo XLSX file `New_LAMP_638202.xlsx`, **again with no options for other formats or behavior**. 
+
+The two XLSX exports were converted to CSV files (they are in the repo) and compared, and proven to be IDENTICAL.  So marking the metadata as reviewed had no apparent effect on the metdata or the apps export behavior.  
+
+
