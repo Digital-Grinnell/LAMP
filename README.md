@@ -102,4 +102,99 @@ Selecting all 6 records and choosing "Download metadata" again produced the repo
 
 The two XLSX exports were converted to CSV files (they are in the repo) and compared, and proven to be IDENTICAL.  So marking the metadata as reviewed had no apparent effect on the metdata or the apps export behavior.  
 
+### 08
+To preserve past analysis I renamed the "seeklight-metadata" folder to "seeklight-metadata-Rev-0".  I've created a new "seeklight-metadata-Rev-1" folder for Seeklight exports from this latest analysis and moved four files, two .xlsx and two .csv, to that new folder.  
+
+I also renamed the "mapped-metadata" folder to "mapped-metadata-Rev-0", created a new copy of that folder named "mapped-metadata-Rev-1", and am populating it with new 
+
+### 09
+I was curious about the `[bracketed]` numbers following field names in the Seeklight exports.  Copilot found this:  
+
+Let me check if there's any documentation about these bracketed numbers:  
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-1/README.md)
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-0/README.md)
+
+Let me search for any documentation that might explain this: 
+
+Searched for regex `3076089|3076090|bracketed|field.*ID|custom field` (`**/*.md`), 16 results
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/docs/field-mapping.md#1-1), lines 1 to 100
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/docs/field-mapping.md#100-100), lines 100 to 118
+
+Based on the patterns in your files and documentation, the **bracketed numbers are custom field identifiers** in JSTOR Forum's system (which Seeklight uses for metadata exports).
+
+Here's what I can tell you:
+
+```
+## Key Points:
+
+1. **Sequential IDs**: They're sequential database field IDs that increment by 1 for each field
+   - Example: Title[3076089], Creator[3076090], Volume[3076091], etc.
+
+2. **System-Specific**: The high starting number (3076089) suggests these are system-wide identifiers in JSTOR Forum's database, not just local to your export
+
+3. **Version Changes**: These IDs change between exports/configurations:
+   - **Older export** (LAMP_AI_624375.csv): Title[3071073], Creator[3071074], Style[3071089]
+   - **Newer export** (New_LAMP_628302.csv): Title[3076089], Creator[3076090], Style[3076105]
+
+4. **For Mapping Purposes**: The field **names** (Title, Creator, Description, etc.) are what matter for your DC/DCTerms mapping—the bracketed numbers can be ignored when doing metadata transformations
+
+5. **Likely Purpose**: These IDs probably allow JSTOR Forum to:
+   - Track custom field definitions across different projects/workspaces
+   - Maintain configuration settings
+   - Reference fields in their internal database
+
+For your mapping work, you can treat these as administrative metadata that helps JSTOR Forum manage its field configurations, but they don't affect how you map the content to Dublin Core fields.
+```
+
+### 10
+Did a little research regarding the `[bracketed]` numbers in the Seeklight headings and found this:  
+
+```
+Let me check if there's any documentation about these bracketed numbers:  
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-1/README.md)
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-0/README.md)
+
+Let me search for any documentation that might explain this: 
+
+Searched for regex `3076089|3076090|bracketed|field.*ID|custom field` (`**/*.md`), 16 results
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/docs/field-mapping.md#1-1), lines 1 to 100
+
+Read [](file:///Users/mcfatem/GitHub/LAMP/docs/field-mapping.md#100-100), lines 100 to 118
+
+Based on the patterns in your files and documentation, the **bracketed numbers are custom field identifiers** in JSTOR Forum's system (which Seeklight uses for metadata exports).
+
+Here's what I can tell you:
+
+## Key Points:
+
+1. **Sequential IDs**: They're sequential database field IDs that increment by 1 for each field
+   - Example: Title[3076089], Creator[3076090], Volume[3076091], etc.
+
+2. **System-Specific**: The high starting number (3076089) suggests these are system-wide identifiers in JSTOR Forum's database, not just local to your export
+
+3. **Version Changes**: These IDs change between exports/configurations:
+   - **Older export** (LAMP_AI_624375.csv): Title[3071073], Creator[3071074], Style[3071089]
+   - **Newer export** (New_LAMP_628302.csv): Title[3076089], Creator[3076090], Style[3076105]
+
+4. **For Mapping Purposes**: The field **names** (Title, Creator, Description, etc.) are what matter for your DC/DCTerms mapping—the bracketed numbers can be ignored when doing metadata transformations
+
+5. **Likely Purpose**: These IDs probably allow JSTOR Forum to:
+   - Track custom field definitions across different projects/workspaces
+   - Maintain configuration settings
+   - Reference fields in their internal database
+
+For your mapping work, you can treat these as administrative metadata that helps JSTOR Forum manage its field configurations, but they don't affect how you map the content to Dublin Core fields.
+```
+
+I subsequently "softened" the logic in /Users/mcfatem/GitHub/LAMP/sample-objects/mapped-metadata-Rev-1/map_seeklight_to_dcap01.py to ignore those numbers, ran the script again, and confirmed that the new results are IDENTICAL to the old output, and that output (in /Users/mcfatem/GitHub/LAMP/sample-objects/mapped-metadata-Rev-1/seeklight_export_to_DCAP01-FROM-SCRIPT.csv) remains IDENTICAL to the raw Copilot output in /Users/mcfatem/GitHub/LAMP/sample-objects/mapped-metadata-Rev-1/seeklight_export_to_DCAP01-FROM-COPILOT.csv.  
+
+### 11
+Now, time to modify and run the /Users/mcfatem/GitHub/LAMP/sample-objects/mapped-metadata-Rev-1/compare_metadata.py and sample-objects/mapped-metadata-Rev-1/compare_similar_values.py scripts again using this new output.  
 
