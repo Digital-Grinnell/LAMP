@@ -36,51 +36,51 @@ Based on comparison of Alma export (`alma_export_20260430_104136.csv`) and Seekl
 
 | Seeklight Field | DC / DCTerms Field      | Notes / Transformation Required                  |
 |-----------------|-------------------------|--------------------------------------------------|
-| Title[3071073] | dc:title | Direct mapping |
-| Creator[3071074] | dc:creator | Direct mapping; may include multiple creators separated by pipe (&#124;) |
-| Description[3071079] | dc:description | Primary description field; very detailed in Seeklight output |
-| Description[3071079] | dcterms:abstract | Seeklight descriptions often function as abstracts |
-| Subject[3071080] | dc:subject | Direct mapping; Seeklight uses pipe (&#124;) separators |
-| Keywords[3071094] | dc:subject | Additional subject terms; can be combined with Subject field |
-| Named Entities[3071093] | dc:contributor | Could map to contributor when entities are people/organizations |
-| Publisher[3071084] | dcterms:publisher | Direct mapping |
-| Language[3071078] | dc:language | Direct mapping; uses language names (e.g., "English") |
+| Title | dc:title | Direct mapping |
+| Creator | dc:creator | Direct mapping; may include multiple creators separated by pipe (&#124;) |
+| Description | dc:description | Primary description field; very detailed in Seeklight output |
+| Description | dcterms:abstract | Seeklight descriptions often function as abstracts |
+| Subject | dc:subject | Direct mapping; Seeklight uses pipe (&#124;) separators |
+| Keywords | dc:subject | Additional subject terms; can be combined with Subject field |
+| Named Entities | dc:contributor | Could map to contributor when entities are people/organizations |
+| Publisher | dcterms:publisher | Direct mapping |
+| Language | dc:language | Direct mapping; uses language names (e.g., "English") |
 
 ### Date Fields
 
 | Seeklight Field | DC / DCTerms Field      | Notes / Transformation Required                  |
 |-----------------|-------------------------|--------------------------------------------------|
-| Date[3071077] | dc:date | General date field; Seeklight uses formats like "1943-06-21" or "1914" |
-| Date[3071077] | dcterms:created | When date represents creation date |
-| Date[3071077] | dcterms:issued | When date represents publication date |
-| Period[3071091] | dcterms:temporal | Time period (e.g., "Early 20th century", "World War II") |
+| Date | dc:date | General date field; Seeklight uses formats like "1943-06-21" or "1914" |
+| Date | dcterms:created | When date represents creation date |
+| Date | dcterms:issued | When date represents publication date |
+| Period | dcterms:temporal | Time period (e.g., "Early 20th century", "World War II") |
 
 ### Format and Physical Description
 
 | Seeklight Field | DC / DCTerms Field      | Notes / Transformation Required                  |
 |-----------------|-------------------------|--------------------------------------------------|
-| Type[3071081] | dc:type | General resource type (e.g., "Monograph", "Correspondence") |
-| Resource Type[3071095] | dcterms:type.dcterms:DCMIType | DCMI Type vocabulary (e.g., "Documents", "Images") |
-| Format[3071083] | dc:format | Combined field in Seeklight; may need parsing |
-| Medium[3071085] | dcterms:medium | Material carrier (e.g., "Digital text", "Photographic print") |
-| Technique[3071086] | dcterms:medium | Production method (e.g., "typed", "handwriting", "Lithography") |
-| Material[3071087] | dcterms:medium | Physical materials (e.g., "PDF file", "Paper", "ink on paper") |
-| Measurements[3071088] | dcterms:extent | Physical dimensions (e.g., "116 pages", "3.5 x 5.5 in") |
+| Type | dc:type | General resource type (e.g., "Monograph", "Correspondence") |
+| Resource Type | dcterms:type.dcterms:DCMIType | DCMI Type vocabulary (e.g., "Documents", "Images") |
+| Format | dc:format | Combined field in Seeklight; may need parsing |
+| Medium | dcterms:medium | Material carrier (e.g., "Digital text", "Photographic print") |
+| Technique | dcterms:medium | Production method (e.g., "typed", "handwriting", "Lithography") |
+| Material | dcterms:medium | Physical materials (e.g., "PDF file", "Paper", "ink on paper") |
+| Measurements | dcterms:extent | Physical dimensions (e.g., "116 pages", "3.5 x 5.5 in") |
 
 ### Coverage and Location
 
 | Seeklight Field | DC / DCTerms Field      | Notes / Transformation Required                  |
 |-----------------|-------------------------|--------------------------------------------------|
-| Coverage[3071082] | dc:coverage | Seeklight combines style, culture, period, location with pipe separators |
-| Location[3071092] | dcterms:spatial | Geographic location (e.g., "Grinnell, Iowa, United States") |
-| Location[3071092] | dcterms:spatial.dcterms:Point | When coordinate data available in Alma export |
+| Coverage | dc:coverage | Seeklight combines style, culture, period, location with pipe separators |
+| Location | dcterms:spatial | Geographic location (e.g., "Grinnell, Iowa, United States") |
+| Location | dcterms:spatial.dcterms:Point | When coordinate data available in Alma export |
 
 ### Seeklight-Specific Fields (No Direct DC Equivalent)
 
 | Seeklight Field | DC / DCTerms Field      | Notes / Transformation Required                  |
 |-----------------|-------------------------|--------------------------------------------------|
-| Style[3071089] | *(custom field)* | Artistic/literary style (e.g., "expository", "Romanesque Revival") |
-| Culture[3071090] | *(custom field)* | Cultural context (e.g., "American", "Western", "Global") |
+| Style | *(custom field)* | Artistic/literary style (e.g., "expository", "Romanesque Revival") |
+| Culture | *(custom field)* | Cultural context (e.g., "American", "Western", "Global") |
 | SSID | *(identifier)* | Seeklight system identifier |
 | Filename | *(technical)* | Original filename from Seeklight processing |
 | File Count | *(technical)* | Number of files processed |
@@ -97,8 +97,8 @@ Based on comparison of Alma export (`alma_export_20260430_104136.csv`) and Seekl
 | *(none)* | dcterms:provenance | Provenance information |
 | *(none)* | dcterms:bibliographicCitation | Citation information |
 | *(none)* | dcterms:tableOfContents | Table of contents for compound objects |
-| Volume[3071075] | *(not commonly used)* | Volume number (in Seeklight but empty in sample) |
-| Issue[3071076] | *(not commonly used)* | Issue number (in Seeklight but empty in sample) |
+| Volume | *(not commonly used)* | Volume number (in Seeklight but empty in sample) |
+| Issue | *(not commonly used)* | Issue number (in Seeklight but empty in sample) |
 
 ## Key Observations
 
