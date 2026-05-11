@@ -12,14 +12,14 @@ The result is /Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-2
 
 Copilot comparison of the old versus new metadata points out these differences:  
 
-```
+
 Let me read both files to compare them:   
 
-Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-2/New_LAMP_628632.csv)
+Read [seeklight-metadata-Rev-2/New_LAMP_628632.csv](sample-objects/seeklight-metadata-Rev-2/New_LAMP_628632.csv)
 
-Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-1/New_LAMP_628302.csv#1-1), lines 1 to 1
+Read [seeklight-metadata-Rev-1/New_LAMP_628302.csv](sample-objects/seeklight-metadata-Rev-1/New_LAMP_628302.csv#1-1), lines 1 to 1
 
-Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-1/New_LAMP_628302.csv#4-4), lines 4 to 4
+Read [seeklight-metadata-Rev-1/New_LAMP_628302.csv](sample-objects/seeklight-metadata-Rev-1/New_LAMP_628302.csv#4-4), lines 4 to 4
 
 Here's a detailed comparison of the **"Developmental Dilemmas"** record between Rev-2 and Rev-1 (row 4):
 
@@ -54,7 +54,7 @@ The two records describe the same book but with notable differences:
 8. **Named Entities** - Rev-2 adds "University of Cambridge"
 
 These differences suggest Rev-2 may be a revised/reprocessed metadata export with updated or corrected field values.
-```
+
 
 #### Stewart Public Library
 New metadata generation around the "Stewart Public Library" postcard was run using this prompt:  
@@ -67,10 +67,10 @@ The result is /Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-2
 
 Copilot comparison of the old versus new metadata points out these differences: 
 
-```
-Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-2/New_LAMP_628665.csv)
 
-Read [](file:///Users/mcfatem/GitHub/LAMP/sample-objects/seeklight-metadata-Rev-1/New_LAMP_628302.csv#5-5), lines 5 to 5
+Read [seeklight-metadata-Rev-2/New_LAMP_628665.csv](sample-objects/seeklight-metadata-Rev-2/New_LAMP_628665.csv)
+
+Read [seeklight-metadata-Rev-1/New_LAMP_628302.csv](sample-objects/seeklight-metadata-Rev-1/New_LAMP_628302.csv#5-5), lines 5 to 5
 
 Here's a detailed comparison of the **"Stewart Library 75th Anniversary Invitation"** record between Rev-2 and Rev-1 (row 5):
 
@@ -110,5 +110,3 @@ Both records describe the same physical item (the Stewart Library 75th anniversa
 9. **Location format** - Rev-2 uses comma format "Grinnell, Iowa"; Rev-1 separates with pipes and adds "United States"
 
 Rev-2 appears to characterize this more as a postcard-style invitation with community focus, while Rev-1 emphasizes the commemorative/exhibition nature with more technical printing details.
-```
-
